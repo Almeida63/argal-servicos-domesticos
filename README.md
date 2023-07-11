@@ -45,7 +45,7 @@ Foi usado HTML, CSS, PHP e Javascript
 <p align="center">Tela de Login.</p>
 
 <div align="center">
-  <img src = "https://user-images.githubusercontent.com/73238816/252781806-f30f8c1d-51e7-47e6-b80f-6990b8d04da8.png" width="900px" />
+  <img src = "https://user-images.githubusercontent.com/73238816/252789283-052d25a7-d68a-4029-bdd6-533338c7ad26.png" width="900px" />
 </div>
 <p align="center">Tela Pós Login.</p>
 
