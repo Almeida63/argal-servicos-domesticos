@@ -1,0 +1,719 @@
+/*importando fonte do google*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500;600;700&display=swap');
+
+
+/*todos os elementos da página*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none; /*tirar o underline debaixo do texto*/
+    outline: none;
+    font-family: 'Inter', sans-serif;
+}
+/*corpo da página*/
+body {
+    background-color: #f1f6fc31;
+}
+
+/* logo abaixo do menu*/
+section,footer {
+        padding: 54px 0;                
+
+}
+
+h3{
+    font-size: 50px;
+}
+
+p{
+    color: #0000009c;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/*configurando o botão de login*/
+.btn{ 
+    background-color: #4f9cf9;    /* cor do botão*/
+    color: white; /*cor do texto*/
+    padding: 15px 12px;        /*altura  e largura*/         
+    border-radius: 10px;       /*cantos arredondados*/
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.1s;
+}
+ /*animação ao passar o mouse pelo botão de login*/
+
+.btn.animate-btn{
+    animation: animate-outline 1s ease-out infinite;
+}
+
+.btn:hover{
+    background-color: #3580db;     
+}
+@keyframes animate-outline {
+    from {
+            outline: 15px solid #398cf18a;        /*animação ao passar o mouse pelo botão de login*/
+    }
+    to{
+            outline: 15px solid #4f9bf900;
+
+    }
+}
+
+header {
+    background-position: center; /*faz com que a imagem de fundo fique no centro*/
+    background-size: cover; /*significa que a imagem vai ocupar toda a altura e largura do header*/
+    background-attachment: fixed;  /*efeito aplicado para que a imagem fique parada quando rolar a página*/
+
+}
+nav ul a:not(.btn):after{
+    content: "";
+    background-color: #4f9cf9;      /*efeito que aparece nos menus quando passa o mouse por cima*/
+    height: 3px;
+    width: 0%;
+    display: block;
+    transition: 0.3s;
+    margin: 0 auto;
+/* Define a largura, alinhamento e espaçamento do conteúdo dentro do elemento nav */
+}
+
+nav {
+    
+    width: 100%; /*define a largura do elemento de navegação como 100% do contêiner pai.*/
+    float: right; /*define o elemento de navegação para flutuar à direita do contêiner pai.*/
+    display: flex; /*define o elemento de navegação como um contêiner flexível.*/
+    align-items: center; /*centraliza verticalmente os itens dentro do elemento de navegação.*/
+    justify-content: space-between; /*distribui o espaço disponível igualmente entre os itens de menu e o logotipo.*/
+    padding-top: 30px; /*define um espaçamento superior de 30 pixels para o elemento de navegação.*/
+  }
+  /* Remove o estilo de lista padrão e define o alinhamento e espaçamento do conteúdo da lista */
+  ul {/*o seletor do elemento de lista não ordenada do menu.*/
+    
+    list-style: none; /* remove os marcadores de lista padrão do elemento de lista.*/
+    margin: 0; /*remove a margem padrão do elemento de lista.*/
+    padding: 0; /*remove o preenchimento padrão do elemento de lista.*/
+    display: flex; /*define o elemento de lista como um contêiner flexível.*/
+    align-items: center; /*centraliza verticalmente os itens dentro do elemento de lista.*/
+  }
+  
+  ul li {
+    /* Define a posição dos elementos da lista como inline-block para que fiquem lado a lado e relative para que possam ter filhos posicionados absolutamente em relação a eles */
+    display: inline-block; /*define o item de lista como um elemento de bloco que é exibido em linha com outros elementos de bloco.*/
+    position: relative; /*define a posição do item de lista como relativa para permitir que os submenus sejam posicionados em relação a ele.*/
+    text-align: center;
+    align-items: center;
+  }
+  
+  ul li a {
+    /* Define o estilo dos links da lista, incluindo largura mínima, preenchimento, cor e tamanho da fonte */
+    display: block;
+    padding: 20px 25px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    min-width: 100%; 
+    align-items: center;
+  }
+  /* CSS para o sub-menu */
+.sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 10px; /* ajuste de posição para a esquerda */
+    text-align: center;
+    align-items: center;
+    text-align: 100%;
+  }
+  nav ul li:hover > .sub-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  
+  
+  ul li ul.dropdown li {
+    /* Define a posição dos elementos da lista dentro do submenu como bloco para que sejam exibidos em colunas e o alinhamento como centralizado */
+    display: block;
+    left: -10px;
+  }
+  
+  ul li ul.dropdown li a {
+    /* Define o estilo dos links dentro do submenu, incluindo preenchimento, cor, tamanho da fonte e largura de 100% para preencher todo o espaço disponível */
+    display: block;
+    width: 100%;
+    padding: 20px 25px;
+    color: #FFF;
+    text-decoration:none;
+    padding-left: 5px;
+    align-items: center;
+    font-size: 20px;
+    min-width: 100%;
+  }
+  
+  ul li ul.dropdown {
+    /* Define a largura, cor de fundo, posição e espaçamento do submenu, além de torná-lo invisível por padrão */
+    width: 100%;
+    background: #1c58a1;
+    position: absolute;
+    z-index: 999;
+    display: none;
+  }
+
+  
+  
+  ul li a:hover {
+    /* Define a cor de fundo do item da lista quando o mouse está em cima dele */
+    background: #4f9cf9;
+
+  }
+  .dropdown .sub-menu{
+    text-align: center;
+  }
+  
+  
+  ul li:hover ul.dropdown {
+    /* Exibe o submenu quando o mouse está em cima do item da lista pai */
+    display: block;
+  }
+  
+  
+  
+
+/*menu mobile*/
+nav .menu-icon{
+    cursor: pointer;
+    font-size: 25px;
+    color: white;
+    display: none;
+}
+nav .close-icon{
+    display: none;
+    font-size: 30px;
+    color: white;
+}
+
+/*configurando a parte de baixo do menu*/
+.banner{
+    display: flex;
+    justify-content: center;           /*configurando a parte de baixo do menu*/
+}
+
+.banner .banner-text{
+    margin: 150px;
+    text-align: center;
+    padding: 0 90px;
+    padding-left: 1370px;
+    padding-top: 50px;
+    
+    
+}
+.banner .banner-text h1{
+    font-size: 96px;            /* nome gigante ARGAL*/
+    color: white;
+    width: 100%;
+}
+
+.banner .banner-text p{
+    font-size: 20px;
+    color: #ffffffb7;       /* texto logo abaixo do nome ARGAL*/
+    font-weight: lighter;
+    margin: 18px 0;
+    width: 100%;
+}
+
+/* faça parte*/ 
+.faca-parte .container{
+    display: flex;
+    align-items: center;
+}
+
+/* estilizando a parte do texto "Faça parte"*/
+.faca-parte .faca-parte-text{
+    width: 50%;
+    padding: 0 40px;
+}
+
+.faca-parte .faca-parte-text h3{
+   font-size: 56px;
+   
+}
+
+.faca-parte .faca-parte-text p{
+    margin: 10px 0 10px 0;
+    color: #413c3c;
+}
+
+.faca-parte .faca-parte-img{
+    width: 50%;
+    margin: 10px 0 10px 0;
+   
+}
+
+.faca-parte .faca-parte-img img{
+    width: 100%;
+   
+}
+
+/*estiliznado a parte de depoimentos*/
+.depoimentos h3{
+    text-align: center;
+}
+.depoimentos p{
+    margin-bottom: 20px;
+    text-align: center;
+    color: #000000;
+}
+
+.cards{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.depoimentos .card-item {
+    background-color: #d3e6fd;
+    margin: 15px;
+    border-radius: 14px;
+    text-align: center;
+    width: 350px;
+    transition: 0.3s;
+    height: 360px;
+}
+
+.depoimentos .card-item img{
+    border-radius: 100%;
+    width: 80px;
+    display: block;
+    margin: 10px auto;
+}
+
+.depoimentos .card-item .nome-user {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.depoimentos .card-item .depoimento-user{
+    font-size: 15px;
+    padding: 0 15px;
+    transition: 0.3s;
+}
+.depoimentos .card-item .estrelas {
+    margin: 15px;
+    border-top: 2px solid #f1f4f723;
+}
+.depoimentos .card-item .estrelas i{
+    color: #4f9cf9;
+    margin-top: 15px;
+    font-size: 20px;
+
+}
+
+.depoimentos .card-item:hover{
+    background-color: #4f9cf9;                  /*cor quando passa o mouse em cima do depoimento*/
+    margin-top: -5px;
+}
+
+.depoimentos .card-item:hover .nome-user,
+.depoimentos .card-item:hover .depoimento-user,
+.depoimentos .card-item:hover .estrelas i {
+    color: white;
+    transition: 0.3s;
+}
+
+/*parceiros*/
+
+.parceiros h3, .parceiros p{
+    text-align: center;
+}
+
+.parceiros .container div {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+/*rodapé*/
+
+.footer {
+    background-color: black;
+    text-align: center;
+}
+.footer i{
+    color:black;
+    font-size: 19px;
+    background-color: white;
+    padding: 10px;
+    margin: 3px;
+    border-radius: 10px;
+}
+.footer p{
+    margin-top: 10px;
+    color: white;
+}
+/*Página sobre*/ 
+.sobre .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.sobre .sobre-text{
+    width: 50%;
+    padding-right: 40px;
+}
+.sobre .sobre-text p{
+    margin: 18px 0;
+    color: #000000a6;
+}
+.sobre .sobre-img{
+    width: 50%;
+}
+.sobre .sobre-img img{
+    width: 100%;
+    border-radius: 10px;
+}
+/*end página sobre*/
+/*página serviços*/
+.servicos h3{
+    text-align: center;
+}
+.servicos .container  p{
+    text-align: center;
+    color: #000000;
+}
+.servicos .rows-cards{
+    display: flex;                  /*deixa os itens um do lado do outro*/
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.servicos .row-card-item{
+    background-color: #234977;
+    width: 350px;
+    padding: 20px;
+    border-radius: 14px;
+    margin: 20px;
+    transition: 0.3s;
+    
+}
+.servicos .row-card-item:hover{
+    background-color: #4f9cf9 ;
+}
+.servicos .row-card-item:hover p{
+    color: white;
+}
+.servicos .row-card-item img {
+    background-color: #4f9cf9;
+    border-radius: 14px;
+    width: 70px;
+    padding:9px ;
+}
+.servicos .row-card-item p.nome-servico{
+    margin: 5px;
+    transition: 0.3s;
+}
+.servicos .row-card-item p.descricao-servico{
+    transition: 0.3s;
+}
+/*end página serviços*/
+
+/*Página de contato*/
+
+.contacto-info{
+    display: flex;
+    justify-content: space-between ;
+    margin-top: 50px;
+}
+.contacto-info .left-side{
+    width: 40%;
+    padding: 30px;
+    background-color: #4f9cf9 ;
+    border-radius: 14px;
+    margin-left: 50px;
+    height: fit-content;
+}
+
+.contacto-info .left-side div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.contacto-info .left-side div i{
+    font-size: 24px;
+    margin-right: 20px;
+    color: white;
+}
+
+.contacto-info .left-side p{
+    font-size: 17px;
+    color: white;
+}
+.contacto-info .right-side {
+    width: 50%;
+
+}
+.contacto-info .right-side input{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    height: 47px;
+    padding: 15px;
+    border-radius: 9px;
+    transition: 0.3s;
+    border: 1px solid #f1f1f1;
+    color: #212121;
+    font-weight: lighter;
+}
+.contacto-info .right-side input:focus,
+.contacto-info .right-side textarea:focus{
+    border-color: #4f9cf9;
+}
+
+.contacto-info .right-side textarea{
+    border: 1px solid #f1f1f1;
+    color: #212121;
+    border-radius: 9px;
+    margin-bottom: 10px;
+    padding: 15px;
+    width: 100%;
+    transition: 0.3s;
+    resize: none;
+}
+.contacto-info .right-side button{
+    border: none;
+}
+
+.right-side :hover{
+    background-color: white;
+}
+
+
+
+/*login*/
+.area-cadastro{
+    display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.cadastro{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #2b6ab8;
+  width: 355px;
+  height: 450px;
+  padding: 35px;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.cadastro form{
+    display: flex;
+    width: 80%;
+    flex-direction: column;
+}
+
+.cadastro input {
+    margin-top: 10px;
+    background-color: #000000;
+    color: #ffffff;
+    padding-left: 10px;
+    border: none;
+    height: 45px;
+    outline: none;
+    border-radius: 8px;
+}
+
+.cadastro img{
+    width: 65px;
+    height: auto;
+
+}
+
+.input::placeholder{
+    color: #080808;
+    font-size: 14px;
+}
+form [type="submit"]{
+    background-color: #1c58a1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+form :hover{
+    background-color: #08182c;
+}
+
+p{
+    color: #fff;
+}
+
+a{
+    color:#000000;
+    text-decoration: none;
+    margin-left: 10px;
+
+}
+/* end login*/
+
+/*tela de pos login*/
+.poslogin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+
+.poslogin h3{
+    font-size: 20px;
+    text-align: center;
+    color: #FFF;
+}
+
+.poslogin button {
+    background-color: #1c58a1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+.poslogin button:hover {
+    background-color: white;
+  }
+
+
+.erro1 {
+
+     color: red;
+     font-weight: bold;
+    
+    }
+    
+    
+    
+    
+.erro2 {
+    
+     display: flex;
+    
+     justify-content: center;
+    
+     align-items: center;
+    
+     font-size: 24px;
+    
+     font-weight: bold;
+    
+     text-align: center;
+    
+     color: #ff0000;
+    
+     padding: 10px;
+    
+     border: 4px solid #ff0000;
+    
+     background: #ebbab7;
+    
+     border-radius: 10px;
+    
+     }
+.contratar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.contratar a {
+  margin-bottom: 20px;
+  color: #000000;
+  text-decoration: none;
+}
+
+
+
+/* Estilos para o formulário */
+.formulario {
+width: 400px;
+margin: 0 auto;
+}
+
+/* Estilos para os campos de entrada */
+.formulario input[type="text"],
+.formulario input[type="email"],
+.formulario textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+/* Estilos para o botão de envio */
+.formulario input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+/* Estilos para o botão de envio ao passar o mouse */
+.formulario input[type="submit"]:hover {
+background-color: #45a049;
+}
+
+/* Estilos para as mensagens de erro */
+.formulario .error {
+color: red;
+margin-bottom: 10px;
+}
+
+/* Estilos para as mensagens de sucesso */
+.formulario .success {
+color: green;
+margin-bottom: 10px;
+}
