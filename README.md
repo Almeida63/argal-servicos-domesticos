@@ -1,9 +1,9 @@
-## Descrição do Projeto
+# Descrição do Projeto
 Este projeto foi desenvolvido por Gabriel Almeida, Gustavo Martins, Luiz Henrique e Ramon Leandro para a matéria de Projeto Integrador 4 do 4° Semestre. 
 O objetivo do projeto é criar um site de cadastro e contratação de serviços domésticos, proporcionando uma plataforma para conectar clientes e trabalhadores.
 Foi usado HTML, CSS, PHP e Javascript
 
-# Recursos Principais 
+## Recursos Principais 
 .Cadastro e login para clientes e trabalhadores.
 .Exibição de informações do usuário após o login.
 .Conta de trabalhador exibindo a profissão cadastrada.
